@@ -6,10 +6,10 @@ services:
     volumes:
       - ./dist:/usr/share/nginx/html
     labels:
-      - traefik.enable=true
-      - traefik.http.routers.coc.rule=Host(`coc.${DOMAIN?:err}`)
-      - traefik.http.routers.coc.service=ks
-      - traefik.http.services.coc.loadbalancer.server.port=80
+      - "traefik.enable=true"
+      - "traefik.http.routers.cracked-or-cooked.rule=Host(`cracked-or-cooked.${DOMAIN?:err}`)"
+      - "traefik.http.routers.cracked-or-cooked.service=cracked-or-cooked"
+      - "traefik.http.services.cracked-or-cooked.loadbalancer.server.port=80"
     networks:
       - traefik_default
     restart: unless-stopped
